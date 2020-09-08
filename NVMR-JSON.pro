@@ -22,7 +22,6 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 CONFIG += create_pc create_prl no_install_prl
 
-QMAKE_PKGCONFIG_FILE=nvmr-json
 
 SOURCES += \
     videosendermessage.cpp \
@@ -36,8 +35,21 @@ HEADERS += \
     videosettings.h \
     networksettings.h
 
+
 unix {
-    #TODO there's some variable we need to set to make this multiarch-aware..
-    target.path = /usr/lib
-    INSTALLS += target
+    if( isEmpty(LIBRARY_PATH) ){
+        target.path = /usr/lib
+    }else{
+        target.path = /usr/lib/$$LIBRARY_PATH/
+    }
+    INSTALLS += target 
+
+    headers_target.files = $$HEADERS
+    headers_target.path = /usr/include/nvmr-json
+    INSTALLS += headers_target
+
+    QMAKE_PKGCONFIG_INCDIR=nvmr-json
+    QMAKE_PKGCONFIG_FILE=nvmr-json
+    QMAKE_PKGCONFIG_DESTDIR=pkgconfig
 }
+
