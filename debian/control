@@ -12,7 +12,7 @@ Package: libnvmr-json-dev
 Section: libdevel
 Architecture: any
 Multi-Arch: same
-Depends: nvmr-json1 (= ${binary:Version}), ${misc:Depends}
+Depends: libnvmr-json1 (= ${binary:Version}), ${misc:Depends}
 Description: NVMR JSON library(development headers)
  NVMR JSON library(development headers)
 
