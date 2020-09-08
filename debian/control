@@ -8,7 +8,7 @@ Homepage: <insert the upstream URL, if relevant>
 #Vcs-Browser: https://salsa.debian.org/debian/nvmr-json
 #Vcs-Git: https://salsa.debian.org/debian/nvmr-json.git
 
-Package: nvmr-json-dev
+Package: libnvmr-json-dev
 Section: libdevel
 Architecture: any
 Multi-Arch: same
@@ -16,7 +16,7 @@ Depends: nvmr-json1 (= ${binary:Version}), ${misc:Depends}
 Description: NVMR JSON library(development headers)
  NVMR JSON library(development headers)
 
-Package: nvmr-json1
+Package: libnvmr-json1
 Architecture: any
 Multi-Arch: same
 Depends: ${shlibs:Depends}, ${misc:Depends}
