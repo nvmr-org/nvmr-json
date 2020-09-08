@@ -1,0 +1,24 @@
+Source: nvmr-json
+Priority: optional
+Maintainer: Robert Middleton <robert.middleton@rm5248.com>
+Build-Depends: debhelper (>= 11), qt5-default
+Standards-Version: 4.1.3
+Section: libs
+Homepage: <insert the upstream URL, if relevant>
+#Vcs-Browser: https://salsa.debian.org/debian/nvmr-json
+#Vcs-Git: https://salsa.debian.org/debian/nvmr-json.git
+
+Package: nvmr-json-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: nvmr-json1 (= ${binary:Version}), ${misc:Depends}
+Description: NVMR JSON library(development headers)
+ NVMR JSON library(development headers)
+
+Package: nvmr-json1
+Architecture: any
+Multi-Arch: same
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: NVMR JSON library
+ NVMR JSON library
