@@ -48,7 +48,7 @@ unix {
     headers_target.path = /usr/include/nvmr-json
     INSTALLS += headers_target
 
-    QMAKE_PKGCONFIG_INCDIR=nvmr-json
+    QMAKE_PKGCONFIG_INCDIR=/usr/include/nvmr-json
     QMAKE_PKGCONFIG_FILE=nvmr-json
     QMAKE_PKGCONFIG_DESTDIR=pkgconfig
 }
