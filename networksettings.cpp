@@ -1,0 +1,42 @@
+#include "networksettings.h"
+
+NetworkSettings::NetworkSettings(){
+
+}
+
+NetworkSettings::NetworkSettings( QJsonValue val ){
+    if( !val.isObject() ){
+        return;
+    }
+
+    QJsonObject obj = val.toObject();
+    m_udpHost = obj.value( "udp-host" ).toString();
+    m_port = obj.value( "udp-port" ).toInt();
+}
+
+QString NetworkSettings::udpHost() const{
+    return m_udpHost;
+}
+
+NetworkSettings& NetworkSettings::setUdpHost( QString host ){
+    m_udpHost = host;
+    return *this;
+}
+
+int NetworkSettings::udpPort() const{
+    return m_port;
+}
+
+NetworkSettings& NetworkSettings::setUdpPort( int port ){
+    m_port = port;
+    return *this;
+}
+
+QJsonObject NetworkSettings::jsonObj() const{
+    QJsonObject obj;
+
+    obj.insert( "udp-host", m_udpHost );
+    obj.insert( "udp-port", m_port );
+
+    return obj;
+}
