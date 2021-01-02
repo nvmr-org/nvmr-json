@@ -21,9 +21,9 @@ public:
 
     QJsonObject jsonObj();
 
-signals:
+Q_SIGNALS:
 
-public slots:
+public Q_SLOTS:
 private:
     QString m_command;
     bool m_hasConfiguration;
