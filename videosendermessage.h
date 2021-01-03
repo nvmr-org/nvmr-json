@@ -12,6 +12,7 @@ class VideoSenderMessage : public QObject
     Q_OBJECT
 public:
     explicit VideoSenderMessage(QJsonObject obj, QObject *parent = nullptr);
+    explicit VideoSenderMessage(QObject* parent = nullptr);
 
     QString command() const;
     VideoSenderMessage& setCommand( QString command );

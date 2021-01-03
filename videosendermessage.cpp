@@ -12,6 +12,10 @@ VideoSenderMessage::VideoSenderMessage(QJsonObject obj, QObject *parent) :
     }
 }
 
+VideoSenderMessage::VideoSenderMessage(QObject* parent) :
+    QObject(parent)
+{}
+
 QString VideoSenderMessage::command() const{
     return m_command;
 }
