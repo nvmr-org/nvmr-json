@@ -51,3 +51,11 @@ QJsonObject VideoSenderConfiguration::jsonObj() const{
 
     return obj;
 }
+
+VideoSettings& VideoSenderConfiguration::mutable_videoSettings(){
+    return m_videoSettings;
+}
+
+VideoSettings VideoSenderConfiguration::videoSettings() const {
+    return m_videoSettings;
+}
