@@ -27,13 +27,15 @@ SOURCES += \
     videosendermessage.cpp \
     videosenderconfiguration.cpp \
     videosettings.cpp \
-    networksettings.cpp
+    networksettings.cpp \
+    streaminformation.cpp
 
 HEADERS += \
     videosendermessage.h \
     videosenderconfiguration.h \
     videosettings.h \
-    networksettings.h
+    networksettings.h \
+    streaminformation.h
 
 
 unix {

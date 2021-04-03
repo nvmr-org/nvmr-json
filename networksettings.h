@@ -16,11 +16,15 @@ public:
     int udpPort() const;
     NetworkSettings& setUdpPort( int port );
 
+    bool broadcast() const;
+    void setBroadcast( bool broadcast );
+
     QJsonObject jsonObj() const;
 
 private:
     QString m_udpHost;
     int m_port;
+    bool m_broadcast;
 };
 
 #endif // NETWORKSETTINGS_H

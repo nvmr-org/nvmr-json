@@ -12,6 +12,7 @@ NetworkSettings::NetworkSettings( QJsonValue val ){
     QJsonObject obj = val.toObject();
     m_udpHost = obj.value( "udp-host" ).toString();
     m_port = obj.value( "udp-port" ).toInt();
+    m_broadcast = obj.value( "broadcast" ).toBool();
 }
 
 QString NetworkSettings::udpHost() const{
@@ -37,6 +38,15 @@ QJsonObject NetworkSettings::jsonObj() const{
 
     obj.insert( "udp-host", m_udpHost );
     obj.insert( "udp-port", m_port );
+    obj.insert( "broadcast", m_broadcast );
 
     return obj;
+}
+
+bool NetworkSettings::broadcast() const {
+    return m_broadcast;
+}
+
+void NetworkSettings::setBroadcast( bool broadcast ){
+    m_broadcast = broadcast;
 }

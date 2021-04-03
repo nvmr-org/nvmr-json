@@ -6,6 +6,7 @@
 #include <QJsonObject>
 
 #include "videosenderconfiguration.h"
+#include "streaminformation.h"
 
 class VideoSenderMessage : public QObject
 {
@@ -20,6 +21,9 @@ public:
     VideoSenderConfiguration configuration() const;
     VideoSenderConfiguration& mutuable_configuration();
 
+    StreamInformation streaminformation() const;
+    StreamInformation& mutable_streaminformation();
+
     QJsonObject jsonObj();
 
 Q_SIGNALS:
@@ -29,6 +33,7 @@ private:
     QString m_command;
     bool m_hasConfiguration;
     VideoSenderConfiguration m_configuration;
+    StreamInformation m_streamInformation;
 };
 
 #endif // VIDEOSENDERMESSAGE_H
