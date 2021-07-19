@@ -35,7 +35,7 @@ if( UNIX )
         "\${prefix}/lib"
     )
     SET(PKG_CONFIG_INCLUDEDIR
-        "\${prefix}/include"
+        "\${prefix}/include/nvmr-json"
     )
     SET(PKG_CONFIG_LIBS
         "-lnvmr-json"
