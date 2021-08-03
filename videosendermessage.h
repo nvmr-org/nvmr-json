@@ -8,12 +8,11 @@
 #include "videosenderconfiguration.h"
 #include "streaminformation.h"
 
-class VideoSenderMessage : public QObject
+class VideoSenderMessage
 {
-    Q_OBJECT
 public:
-    explicit VideoSenderMessage(QJsonObject obj, QObject *parent = nullptr);
-    explicit VideoSenderMessage(QObject* parent = nullptr);
+    VideoSenderMessage();
+    explicit VideoSenderMessage(QJsonObject obj);
 
     QString command() const;
     VideoSenderMessage& setCommand( QString command );
@@ -25,10 +24,6 @@ public:
     StreamInformation& mutable_streaminformation();
 
     QJsonObject jsonObj();
-
-Q_SIGNALS:
-
-public Q_SLOTS:
 private:
     QString m_command;
     bool m_hasConfiguration;

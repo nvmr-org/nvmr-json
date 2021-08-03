@@ -1,7 +1,8 @@
 #include "videosendermessage.h"
 
-VideoSenderMessage::VideoSenderMessage(QJsonObject obj, QObject *parent) :
-    QObject(parent)
+VideoSenderMessage::VideoSenderMessage(){}
+
+VideoSenderMessage::VideoSenderMessage(QJsonObject obj)
 {
     if( obj.contains( "command" ) ){
         m_command = obj.value( "command" ).toString();
@@ -15,10 +16,6 @@ VideoSenderMessage::VideoSenderMessage(QJsonObject obj, QObject *parent) :
         m_streamInformation = StreamInformation( obj.value( "stream" ) );
     }
 }
-
-VideoSenderMessage::VideoSenderMessage(QObject* parent) :
-    QObject(parent)
-{}
 
 QString VideoSenderMessage::command() const{
     return m_command;
