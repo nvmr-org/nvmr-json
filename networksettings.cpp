@@ -1,6 +1,8 @@
 #include "networksettings.h"
 
-NetworkSettings::NetworkSettings(){
+NetworkSettings::NetworkSettings() :
+    m_port( 0 ),
+    m_broadcast( false ){
 
 }
 
