@@ -32,6 +32,9 @@ public:
     int framerate() const;
     VideoSettings& setFramerate( int framerate );
 
+    int rotation() const;
+    VideoSettings& setRotation( int rotation );
+
     QJsonObject jsonObj() const;
 
 private:
@@ -42,6 +45,7 @@ private:
     int m_configInterval;
     int m_pt;
     int m_framerate;
+    int m_rotation;
 };
 
 #endif // VIDEOSETTINGS_H

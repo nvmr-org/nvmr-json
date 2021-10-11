@@ -6,7 +6,8 @@ VideoSettings::VideoSettings() :
     m_height( -1 ),
     m_configInterval( -1 ),
     m_pt( -1 ),
-    m_framerate( -1 ){
+    m_framerate( -1 ),
+    m_rotation( 0 ){
 
 }
 
@@ -24,6 +25,7 @@ VideoSettings::VideoSettings( QJsonValue val ) :
     m_configInterval = obj.value( "config-interval" ).toInt();
     m_pt = obj.value( "pt" ).toInt();
     m_framerate = obj.value( "framerate" ).toInt();
+    m_rotation = obj.value( "rotation" ).toInt();
 }
 
 int VideoSettings::id() const{
@@ -99,6 +101,16 @@ QJsonObject VideoSettings::jsonObj() const{
     obj.insert( "config-interval", m_configInterval );
     obj.insert( "pt", m_pt );
     obj.insert( "framerate", m_framerate );
+    obj.insert( "rotation", m_rotation );
 
     return obj;
+}
+
+int VideoSettings::rotation() const{
+    return m_rotation;
+}
+
+VideoSettings& VideoSettings::setRotation( int rotation ){
+    m_rotation = rotation;
+    return *this;
 }
