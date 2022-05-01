@@ -1,7 +1,7 @@
 Source: nvmr-json
 Priority: optional
 Maintainer: Robert Middleton <robert.middleton@rm5248.com>
-Build-Depends: debhelper (>= 11), qt5-default, cmake
+Build-Depends: debhelper (>= 11), qtbase5-dev, cmake
 Standards-Version: 4.1.3
 Section: libs
 Homepage: <insert the upstream URL, if relevant>
